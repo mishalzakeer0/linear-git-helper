@@ -3,6 +3,7 @@
   "displayName": "Linear Git Helper",
   "description": "A VS Code extension to automate Linear and Git workflows",
   "version": "0.0.1",
+  "publisher": "MishalZakeer",
   "engines": {
     "vscode": "^1.96.0"
   },
