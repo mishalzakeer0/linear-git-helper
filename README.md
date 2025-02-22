@@ -1,71 +1,28 @@
-# linear-git-helper README
+# Linear Git Helper
 
-This is the README for your extension "linear-git-helper". After writing up a brief description, we recommend including the following sections.
+## Overview
+Linear Git Helper is a VS Code extension that integrates **Linear** and **Git**, allowing automatic branch switching when assigned tickets change.
 
 ## Features
+- Automatically switches branches based on assigned Linear tickets.
+- Handles branch creation from ticket names.
+- Ensures a smooth workflow without unnecessary branch duplication.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Installation
+1. Install the extension from the VS Code Marketplace.
+2. Set your **Linear API Key** when prompted.
+3. Use the command `Linear: Sync Branch` to update branches.
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Usage
+- When a new Linear ticket is assigned to you, the extension will **create and switch** to a branch automatically.
+- If the ticket is removed, it switches back to the **development branch**.
 
 ## Requirements
+- A Linear API Key.
+- Git installed on your system.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Configuration
+Ensure you have your **Linear API Key** set up in VS Code settings or via the prompt on first activation.
 
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## License
+MIT License.
