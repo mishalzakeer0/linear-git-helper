@@ -1,0 +1,30 @@
+name: Deploy VS Code Extension
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install VSCE
+        run: npm install -g @vscode/vsce
+
+      - name: Package Extension
+        run: vsce package
+
+      - name: Publish to Marketplace
+        run: vsce publish -p ${{ secrets.VSCE_PAT }}
