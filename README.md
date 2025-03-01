@@ -24,5 +24,7 @@ Linear Git Helper is a VS Code extension that integrates **Linear** and **Git**,
 ## Configuration
 Ensure you have your **Linear API Key** set up in VS Code settings or via the prompt on first activation.
 
+## Setup Actions
+
 ## License
 MIT License.
