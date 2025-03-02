@@ -2,7 +2,7 @@
   "name": "linear-git-helper",
   "displayName": "Linear Git Helper",
   "description": "A VS Code extension to automate Linear and Git workflows",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "MishalZakeer",
   "engines": {
     "vscode": "^1.96.0"
