@@ -27,4 +27,4 @@ jobs:
         run: vsce package
 
       - name: Publish to Marketplace
-        run: vsce publish -p ${{ secrets.VSCE_PAT }}
+        run: vsce publish -p 1BSHAZi514pr20EhfVyVd0yfjonuP1DbEZwUMqX5NnNfiTWxsFETJQQJ99BCACAAAAAAAAAAAAASAZDO3fMH 
