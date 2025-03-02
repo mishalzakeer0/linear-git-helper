@@ -23,8 +23,15 @@ jobs:
       - name: Install VSCE
         run: npm install -g @vscode/vsce
 
+      - name: Auto-increment version
+        run: |
+          npm version patch --no-git-tag-version
+          git add package.json
+          git commit -m "ci: bump version [skip ci]" || echo "No changes to commit"
+          git push
+
       - name: Package Extension
         run: vsce package
 
       - name: Publish to Marketplace
-        run: vsce publish -p 1BSHAZi514pr20EhfVyVd0yfjonuP1DbEZwUMqX5NnNfiTWxsFETJQQJ99BCACAAAAAAAAAAAAASAZDO3fMH 
+        run: vsce publish -p 1BSHAZi514pr20EhfVyVd0yfjonuP1DbEZwUMqX5NnNfiTWxsFETJQQJ99BCACAAAAAAAAAAAAASAZDO3fMH
