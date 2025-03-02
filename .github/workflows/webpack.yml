@@ -12,7 +12,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_TOKEN }}  # Use GitHub token for authentication
+          token: ${{ secrets.GH_TOKEN }}  # Use your stored GitHub token
+
+      - name: Setup Git Identity
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -25,20 +30,15 @@ jobs:
       - name: Install VSCE
         run: npm install -g @vscode/vsce
 
-      - name: Set Git Identity
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-
       - name: Auto-increment version
         run: |
           npm version patch --no-git-tag-version
-          git add package.json
-          git commit -m "ci: bump version [skip ci]" || echo "No changes to commit"
+          git add package.json package-lock.json
+          git commit -m "Bump version [skip ci]"
           git push origin master
 
       - name: Package Extension
         run: vsce package
 
       - name: Publish to Marketplace
-        run: vsce publish -p ${{ secrets.VSCE_PAT }}
+        run: vsce publish -p ${{ secrets.VSCE_PAT }}  # Use VSCE token
